@@ -8,7 +8,7 @@ public class Imovel {
     private String endereco;
     private double valorAluguel;
     private String funcionarioResponsavel;
-    private List<Morador> moradores = new ArrayList<>();
+    private List<Morador> morador = new ArrayList<>();
 
     public Imovel() {
     }
@@ -18,7 +18,7 @@ public class Imovel {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;
-        this.moradores = moradores;
+        this.morador = moradores;
     }
 
     public String getEndereco() {
@@ -45,11 +45,8 @@ public class Imovel {
         this.funcionarioResponsavel = funcionarioResponsavel;
     }
 
-    public void adicionarImovel(Imovel imovel){
-        imovel.add(imovel);
-    }
-
-    private void add(Imovel imovel) {
+    public void adicionarMorador(Morador morador){
+        adicionarMorador( morador );
     }
 
     @Override
@@ -58,7 +55,10 @@ public class Imovel {
                 "endereco='" + endereco + '\'' +
                 ", valorAluguel=" + valorAluguel +
                 ", funcionarioResponsavel='" + funcionarioResponsavel + '\'' +
-                ", moradores=" + moradores +
+                ", moradores=" + morador +
                 '}';
+    }
+
+    public void add(Imovel imovel) {
     }
 }
