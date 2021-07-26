@@ -8,7 +8,7 @@ public class Imovel {
     private String endereco;
     private Double valorAluguel;
     private String funcionarioResponsavel;
-    private List<Morador> moradores = new ArrayList<>();
+    private List<String> moradores = new ArrayList<>();
 
     public Imovel() {
     }
@@ -16,7 +16,7 @@ public class Imovel {
 
 
     public Imovel(String endereco, Double valorAluguel,
-                  String funcionarioResponsavel, List<Morador> moradores) {
+                  String funcionarioResponsavel, List<String> moradores) {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;
@@ -48,7 +48,7 @@ public class Imovel {
 
 
 
-    public List<Morador> getListaMorador() {
+    public List<String> getListaMorador() {
         return moradores;
     }
 
@@ -56,23 +56,27 @@ public class Imovel {
         this.funcionarioResponsavel = funcionarioResponsavel;
     }
 
-    public void setListaMorador(List<Morador> listaMorador) {
+    public void setListaMorador(List<String> listaMorador) {
         this.moradores = listaMorador;
     }
 
     public void adicionarMorador(Morador morador) {
-        moradores.add( morador );
+        moradores.add( morador.getNomeDosMoradores() );
     }
 
-    public Morador pegaNomeMorador(String nomeDoMorador){
+   /* public Morador pegaNomeMorador(String nomeDoMorador){
         Morador moradorDeRetorno = null;
         for (Morador percorrer : moradores){
             if (percorrer.getNome().equals(nomeDoMorador)){
                 moradorDeRetorno = percorrer;
+                System.out.println(moradorDeRetorno);
             }
         }
         return moradorDeRetorno;
-    }
+    }*/
+
+
+
 
     @Override
     public String toString() {
@@ -80,7 +84,7 @@ public class Imovel {
         string.append( "\n Endereço do Imóvel: " + endereco );
         string.append( "\n Valor do aluguel do Imóvel: "+ valorAluguel );
         string.append( "\n Funcionário responsável pelo Imóvel: " + funcionarioResponsavel );
-        string.append( "\n Moradores dos Imóvel: " + moradores );
+        string.append( "\n Moradores dos Imóvel: " + moradores);
         return string.toString();
 
     }

@@ -5,11 +5,12 @@ import java.util.List;
 
 public class Sistema {
 
-    public static Morador cadastarMorador(){
+    public static String cadastarMorador(){
+
         Morador morador = new Morador();
         System.out.println("Digite o nome do morador: ");
-        String nomeMorador = IO.criaScanner().nextLine();
-        return morador;
+        String nomeDosMoradores = IO.criaScanner().nextLine();
+        return morador.setNomeDosMoradores(nomeDosMoradores);
     }
 
 
@@ -17,7 +18,7 @@ public class Sistema {
     public static void cadastrarImovel(){
 
         List<Imovel>  listaImoveis = new ArrayList<>();
-        List<Morador> listaMoradores = new ArrayList<>();
+        List<String> listaMoradores = new ArrayList<>();
 
         System.out.println("Digite o endereço do Imóvel: ");
         String endereco = IO.criaScanner().nextLine();
@@ -25,7 +26,7 @@ public class Sistema {
         System.out.println("Digite o valor do Imóvel: ");
         double valorAluguel = IO.criaScanner().nextDouble();
 
-        System.out.println("Digite a quantidade de moradores do Imóvel1: ");
+        System.out.println("Digite a quantidade de moradores do Imóvel: ");
         double quantidadeMoradores = IO.criaScanner().nextDouble();
 
 
@@ -38,7 +39,6 @@ public class Sistema {
         String funcionarioResponsavel = IO.criaScanner().nextLine();
 
         Imovel listaImovel = new Imovel(endereco,valorAluguel,funcionarioResponsavel,listaMoradores);
-
         Imobiliaria.adicionarImovelImobiliaria(listaImovel);
 
 
