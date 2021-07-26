@@ -5,49 +5,50 @@ import java.util.List;
 
 public class Sistema {
 
-
-
     public static Morador cadastarMorador(){
-        System.out.println("Digite o nome do morador: ");
         Morador morador = new Morador();
+        System.out.println("Digite o nome do morador: ");
+        String nomeMorador = IO.criaScanner().nextLine();
         return morador;
     }
 
 
+
     public static void cadastrarImovel(){
-        List<Double> morador = new ArrayList<>();
+
+        List<Imovel>  listaImoveis = new ArrayList<>();
+        List<Morador> listaMoradores = new ArrayList<>();
 
         System.out.println("Digite o endereço do Imóvel: ");
-        String enderco = IO.criaScanner().nextLine();
+        String endereco = IO.criaScanner().nextLine();
 
         System.out.println("Digite o valor do Imóvel: ");
         double valorAluguel = IO.criaScanner().nextDouble();
 
-        System.out.println("Digite a quantidade de moradores do Imóvel: ");
+        System.out.println("Digite a quantidade de moradores do Imóvel1: ");
         double quantidadeMoradores = IO.criaScanner().nextDouble();
 
-        for (int quantidade = 0; quantidade < quantidadeMoradores; quantidade ++ ){
-            morador.add( quantidadeMoradores );
+
+        for (int quantidade = 0; quantidade < quantidadeMoradores; quantidade++ ){
+            listaMoradores.add(cadastarMorador());
+
         }
 
         System.out.println("Digite o nome do funcionário responsável pelo Imóvel: ");
         String funcionarioResponsavel = IO.criaScanner().nextLine();
 
-        Imovel imovel = new Imovel();
-        Imobiliaria.adicionarImovelImobiliaria( imovel );
+        Imovel listaImovel = new Imovel(endereco,valorAluguel,funcionarioResponsavel,listaMoradores);
+
+        Imobiliaria.adicionarImovelImobiliaria(listaImovel);
+
 
     }
 
     public static void executarSistema(){
         cadastrarImovel();
-        Imobiliaria.mostrarImovel();
+        Imobiliaria.mostrarImobiliaria();
 
     }
-
-
-
-
-
 
 
 

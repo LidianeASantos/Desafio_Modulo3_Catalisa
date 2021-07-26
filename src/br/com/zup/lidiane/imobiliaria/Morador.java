@@ -1,8 +1,5 @@
 package br.com.zup.lidiane.imobiliaria;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Morador extends Pessoa{
 
     private String dataInicioContrato;
@@ -10,16 +7,12 @@ public class Morador extends Pessoa{
     private String quantidadeMoradores;
 
 
+
     public Morador() {
     }
 
-    public Morador(String nome, String cpf, String endereco, String telefone,
-                   String dataInicioContrato, String quantidadeDepositoCaucao,
-                   String quantidadeMoradores) {
+    public Morador(String nome, String cpf, String endereco, String telefone) {
         super( nome, cpf, endereco, telefone );
-        this.dataInicioContrato = dataInicioContrato;
-        this.quantidadeDepositoCaucao = quantidadeDepositoCaucao;
-        this.quantidadeMoradores = quantidadeMoradores;
     }
 
     public String getDataInicioContrato() {
@@ -49,9 +42,7 @@ public class Morador extends Pessoa{
     @Override
     public String toString() {
         return "Morador{" +
-                "dataInicioContrato='" + dataInicioContrato + '\'' +
-                ", quantidadeDepositoCaucao='" + quantidadeDepositoCaucao + '\'' +
-                ", quantidadeMoradores='" + quantidadeMoradores + '\'' +
+                "nome='" + getNome() + '\'' +
                 '}';
     }
 }

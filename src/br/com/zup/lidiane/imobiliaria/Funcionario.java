@@ -6,8 +6,7 @@ public class Funcionario extends Pessoa {
     private double salario;
     private String dataAdmissao;
 
-    public Funcionario() {
-    }
+
 
     public Funcionario(String nome, String cpf, String endereco,
                        String telefone, double salario, String dataAdmissao) {

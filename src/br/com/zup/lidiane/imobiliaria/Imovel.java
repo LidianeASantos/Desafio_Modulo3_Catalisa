@@ -6,20 +6,24 @@ import java.util.List;
 public class Imovel {
 
     private String endereco;
-    private double valorAluguel;
+    private Double valorAluguel;
     private String funcionarioResponsavel;
-    private List<Morador> morador = new ArrayList<>();
+    private List<Morador> moradores = new ArrayList<>();
 
     public Imovel() {
     }
 
-    public Imovel(String endereco, double valorAluguel,
+
+
+    public Imovel(String endereco, Double valorAluguel,
                   String funcionarioResponsavel, List<Morador> moradores) {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.funcionarioResponsavel = funcionarioResponsavel;
-        this.morador = moradores;
+        this.moradores = moradores;
     }
+
+
 
     public String getEndereco() {
         return endereco;
@@ -29,36 +33,56 @@ public class Imovel {
         this.endereco = endereco;
     }
 
-    public double getValorAluguel() {
+    public Double getValorAluguel() {
         return valorAluguel;
     }
 
-    public void setValorAluguel(double valorAluguel) {
+    public void setValorAluguel(Double valorAluguel) {
         this.valorAluguel = valorAluguel;
     }
 
     public String getFuncionarioResponsavel() {
         return funcionarioResponsavel;
+
+    }
+
+
+
+    public List<Morador> getListaMorador() {
+        return moradores;
     }
 
     public void setFuncionarioResponsavel(String funcionarioResponsavel) {
         this.funcionarioResponsavel = funcionarioResponsavel;
     }
 
-    public void adicionarMorador(Morador morador){
-        adicionarMorador( morador );
+    public void setListaMorador(List<Morador> listaMorador) {
+        this.moradores = listaMorador;
+    }
+
+    public void adicionarMorador(Morador morador) {
+        moradores.add( morador );
+    }
+
+    public Morador pegaNomeMorador(String nomeDoMorador){
+        Morador moradorDeRetorno = null;
+        for (Morador percorrer : moradores){
+            if (percorrer.getNome().equals(nomeDoMorador)){
+                moradorDeRetorno = percorrer;
+            }
+        }
+        return moradorDeRetorno;
     }
 
     @Override
     public String toString() {
-        return "Imovel{" +
-                "endereco='" + endereco + '\'' +
-                ", valorAluguel=" + valorAluguel +
-                ", funcionarioResponsavel='" + funcionarioResponsavel + '\'' +
-                ", moradores=" + morador +
-                '}';
-    }
+        StringBuilder string = new StringBuilder();
+        string.append( "\n Endereço do Imóvel: " + endereco );
+        string.append( "\n Valor do aluguel do Imóvel: "+ valorAluguel );
+        string.append( "\n Funcionário responsável pelo Imóvel: " + funcionarioResponsavel );
+        string.append( "\n Moradores dos Imóvel: " + moradores );
+        return string.toString();
 
-    public void add(Imovel imovel) {
     }
 }
+
