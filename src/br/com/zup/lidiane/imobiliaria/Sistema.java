@@ -44,9 +44,35 @@ public class Sistema {
 
     }
 
+    public static void menu(){
+        System.out.println("Digite 1 para cadastrar Imóvel: ");
+        System.out.println("Digite 2 para mostrar o Imóvel:");
+        System.out.println("Digite 3 para sair do programa");
+
+    }
+
+
     public static void executarSistema(){
-        cadastrarImovel();
-        Imobiliaria.mostrarImobiliaria();
+        boolean executar = true;
+
+        while (executar==true){
+            menu();
+            String opcao = IO.criaScanner().nextLine();
+
+            switch (opcao) {
+                case "1":
+                    cadastrarImovel();
+                    break;
+                case "2":
+                    Imobiliaria.mostrarImobiliaria();
+                    break;
+                case "3":
+                    executar = false;
+                    break;
+            }
+        }
+
+
 
     }
 
