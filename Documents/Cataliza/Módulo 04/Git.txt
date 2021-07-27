@@ -1,0 +1,10 @@
+passos para resolução de conflito 
+1 - Atualizar a master: git checkout master 
+git pull origin master
+2 - atualizar sua branch com: 
+git checkout NOME_DA_SUA_BRANCH
+git rebase master
+RESOLVER o CONFLITO NO ARQUIVO
+git add . 
+git rebase --continue
+Para sair da tela da mensagem do commit: Apertar tecla esc, depois coloca : e por fim adicionar o x minúsculo e apertar enter
